@@ -14,7 +14,7 @@ COPY . /app
 ENV PORT 8080
 ENV PKG_CACHE_PATH .pkg-cache-upx
 
-RUN yarn build --prod && npx pkg . -t node8-alpine-x64 --output app
+RUN yarn build --prod && npx pkg . -t node8-alpine-armv6 --output app
 
 # ----------------
 # STEP 2:
