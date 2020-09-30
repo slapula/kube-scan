@@ -1,7 +1,7 @@
 # ----------------
 # STEP 1:
 # build with pkg
-FROM node:12.16.2 AS build
+FROM node:12.16.0 AS build
 WORKDIR /app
 
 # install dependencies with cache
@@ -14,7 +14,7 @@ COPY . /app
 ENV PORT 8080
 ENV PKG_CACHE_PATH .pkg-cache-upx
 
-RUN yarn build --prod && npx pkg . -t node8-linux-arm64 --output app
+RUN yarn build --prod && npx pkg . -t node8-linux-armv7 --output app
 
 # ----------------
 # STEP 2:
